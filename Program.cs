@@ -11,7 +11,8 @@ namespace LuckCatchers_Extractor
         static void Main(string[] args)
         {
             br = new(File.OpenRead(args[0]));
-            br.BaseStream.Position = 8;
+            if (new string(br.ReadChars(8)) != "VOLUME0\0")
+                throw new System.Exception("This is not a LuckCatchers res file.");
 
             System.Collections.Generic.List<Subfile> subfiles = new()
             {
