@@ -13,8 +13,10 @@ namespace LuckCatchers_Extractor
             br = new(File.OpenRead(args[0]));
             br.BaseStream.Position = 8;
 
-            System.Collections.Generic.List<Subfile> subfiles = new();
-            subfiles.Add(new());
+            System.Collections.Generic.List<Subfile> subfiles = new()
+            {
+                new()
+            };
             for(int i = 0; i < subfiles[0].size - 1; i++)
                 subfiles.Add(new());
 
